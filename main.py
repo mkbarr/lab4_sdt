@@ -66,10 +66,17 @@ class Face:
         return self.normal().angle_cos(other) > 0
     
 
+view = Point(10, 10, 10)
 v1 = Point(1, 2, 3)
 v2 = Point(-2, 3, 4)
 v3 = Point(5, -1, 5)
-face = Face([v1, v2, v3])
-n = face.normal()
+face_int = Face([v1, v2, v3])
 
-print(n.x, n.y, n.z)
+print(face_int.isVisible(view))
+
+v4 = Point(1.1, 2.2, 3.3)
+v5 = Point(3.5, 7.8, 0.0)
+v6 = Point(0.0, 1.2, 4.4)
+face_float = Face([v4, v5, v6])
+
+print(face_float.isVisible(view))
